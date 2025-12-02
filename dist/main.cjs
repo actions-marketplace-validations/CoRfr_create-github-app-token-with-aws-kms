@@ -68210,7 +68210,7 @@ function createKmsSigner(kmsKeyArn, awsProfile2) {
       KeyId: kmsKeyArn,
       Message: Buffer.from(payload2),
       MessageType: "RAW",
-      SigningAlgorithm: "RSASSA_PKCS1_V1_5_SHA256"
+      SigningAlgorithm: "RSASSA_PKCS1_V1_5_SHA_256"
     });
     const response = await kmsClient.send(command);
     if (!response.Signature) {
