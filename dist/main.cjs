@@ -68213,7 +68213,9 @@ var request_default = request.defaults({
 // lib/kms-auth.js
 var import_client_kms = __toESM(require_dist_cjs54(), 1);
 function createKmsSigner(kmsKeyArn, awsProfile2) {
-  const clientConfig = awsProfile2 ? { profile: awsProfile2 } : {};
+  const arnParts = kmsKeyArn.split(":");
+  const region = arnParts.length >= 4 ? arnParts[3] : void 0;
+  const clientConfig = awsProfile2 ? { profile: awsProfile2, region } : { region };
   const kmsClient = new import_client_kms.KMSClient(clientConfig);
   return async (payload2) => {
     const command = new import_client_kms.SignCommand({
