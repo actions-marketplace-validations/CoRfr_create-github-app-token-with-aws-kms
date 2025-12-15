@@ -364,7 +364,7 @@ steps:
 - The GitHub App's private key must be imported into AWS KMS as an RSA_2048 key
 - The KMS key must be configured to allow the `kms:Sign` permission
 - AWS credentials must be configured before running this action (e.g., using `aws-actions/configure-aws-credentials`)
-- The KMS key must support the `RSASSA_PKCS1_V1_5_SHA256` signing algorithm
+- The KMS key must support the `RSASSA_PKCS1_V1_5_SHA_256` signing algorithm
 
 **Example KMS key setup:**
 ```bash
